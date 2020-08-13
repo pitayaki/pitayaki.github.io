@@ -1,0 +1,36 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>var module = {};</script>
+    <script src=".\tinder.js"></script>
+    <script>var gen = module.exports;</script>
+    <title>מייצר משפטים</title>
+    <link href=".\style.css" rel="stylesheet"/>
+  </head>
+  <body style="height: 100%; width: 100%" dir='rtl' lang='he'>
+
+
+    <div style="display:flex; justify-content: center; padding: 0 300px; flex-direction: column; align-content: center">
+        <h1>מחולל ביו של בנות בטינדר/ קיופיד</h1>
+             <p>גרסא 1.0, נוצרה ע"י
+            <a href="https://twitter.com/pitayaki">פיתהצ'ו</a>
+                ו
+                <a href="https://twitter.com/grandtheftaba">אפס דיפוט</a>
+        </p>
+        <div style="width:570px;">
+            <img style="width:100%;" src="https://static.dezeen.com/uploads/2017/08/tinder-redesign-graphics_dezeen_hero-1.jpg" alt="logo"/>
+            <div id="random-text"></div>
+            <img style="width:100%;" src="https://ichef.bbci.co.uk/images/ic/720x405/p064kl2c.jpg" alt="logo"/>
+            <button onclick="domGen();">יצר אחר</button>
+        </div>
+
+
+    </div>
+    <script>var domGen = function(){document.getElementById('random-text').innerHTML = gen();};domGen();</script>
+
+    <br/>
+    <br/>
+  </body>
+</html>
