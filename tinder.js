@@ -6,83 +6,123 @@ var rndListItem = function(array){
 };
 
 var actions = {
-    object:function(){
+    Names:function(){
       return rndListItem([
-        "קורל,",
-        "נוי,",
-        "לינוי,",
-        "לינוי,",
-        "נוגה,",
-        "אורלי,"
+        "Coral, ",
+        "Bat, ",
+        "Linoy, ",
+"Noy, ",
+"Shiran, ",
+"Shiraz, ",
+"Tair, ",
+		"Noa, ",
+        "M, ",
+        "Oriyan, ",
+        "Libat, "
+
       ]);
     },
-    adobj:function(){
+    Age:function(){
       return rndListItem([
-        "בת 23",
-        "בת 24",
-        "בת 25",
-        "בת 26",
-        "בת 27"
+        "23",
+        "24",
+        "25",
+        "26",
+        "27"
       ]);
     },
-    witha:function(){
+    From:function(){
       return rndListItem([
-        "מרחובות",
-        "מראשון לציון",
-        "מקריית אונו",
-        "מהרצליה"
+        "Lives in Rehovot",
+        "Lives in Tel Aviv",
+        "עכשיו בתל אביב אבל מושבנקית בדם Lives in",
+        "תל אביב Lives in",
+		"Lives in Ramat gan",
+		"Lives in TLV"
       ]);
     },
-    madeBy:function(){
+    Love1:function(){
       return rndListItem([
      "אוהבת המבורגר,",
-        "אוהבת בירה,",
-        "אוהבת יין טוב, ",
-        "אוהבת להנות,"
+	"אוהבת פיצה,",
+     "אוהבת בירה,",
+     "אוהבת יין טוב, ",
+     "אוהבת להנות,"
       ]);
     },
-    whileThey:function(){
+    Love2:function(){
       return rndListItem([
     " קפה טוב",
-        "פואטרי סלאם",
-        "פירות",
-        "שקיעות"
+    "פואטרי סלאם",
+    "פירות",
+	"בעלי חיים",
+"ספורט ואקסטרים",
+	"ירקות",
+    "שקיעות"
       ]);
     },
-    because:function(){
+    Love3:function(){
       return rndListItem([
-           "ונטפליקס.",
+        "ונטפליקס.",
         "וסרטים.",
         "וטיולים.",
         "וסדרות."
       ]);
     },
-    but:function(){
+    Extra:function(){
       return rndListItem([
-         "חברים זה החיים! ",
-        "ברוקלין 9-9! ",
-        "איך פגשתי את אמא! ",
-        "מכירה את כל המשרד בעל-פה"
+        "חברים זה החיים! ",
+        "420",
+		"לא מעשנים",
+        "חייב לאהוב כלבים",
+        "מכירה את כל המשרד בעל-פה",
+		"אותיות איתן נעים להכיר",
+"אם יש לך סלפי בלי חולצה זה לא יעבוד בינינו"
       ]);
     },
-    psv:function(){
+    lookingFor:function(){
       return rndListItem([
         "קשר רציני",
         "לא מחפשת משחקים",
         "לרציניים בלבד",
    "לא פה לסטוצים",
- "1.8 ומעלה"
+   "מחפשת את האחד שיקום איתי ב6 בבוקר לפקל קפה",
+   "מעדיפה מעיין וספר על מסיבה",
+ "1.8 ומעלה",
+ "אל תשלח הודעה אם אתה לא אוהב סושייי"
+    
+
       ])
     }
 };
 
+
+var randomImage = new Array(); 
+	randomImage[0] = "profile.png"; 		
+	randomImage[1] = "profile1.png"; 
+	randomImage[2] = "profile2.png";
+
+
+function getRandomImage() { 
+	var number = Math.floor(Math.random()*randomImage.length);
+	console.log(number);
+	console.log(randomImage[number])
+	return(randomImage[number]);
+}
+
 module.exports =  function(){
   with(actions){
-    var str = object();
-    str += " " + adobj() + "  " + witha() + "</br>";
-    str += madeBy() + " " + whileThey() + " " + because() + "</br>";
-    str += but() + "</br>";
-    str += psv();
+    var str = Names();
+	str +=  Age() + "</br>" + From() + "</br>";
+    str += Love1() + " " + Love2() + " " + Love3() + "</br>";
+    str += Extra() + "</br>";
+    str += lookingFor();
     return str;
   }
 };
+
+function rndPic(){
+console.log(document.getElementById('random-pic').src);
+document.getElementById('random-pic').src = getRandomImage();};
+
+function domGen(){document.getElementById('random-text').innerHTML = gen();};
